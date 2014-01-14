@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+
+NOW=$(date +"%b-%d-%y")
+LOGFILE="/home/luke/scrape/logs/log-$NOW.log"
+NODE="/home/luke/local/node/bin/node"
+MONGO="/usr/bin/mongo"
+
+$NODE /home/luke/scrape/scrape.js > $LOGFILE
+$MONGO /home/luke/scrape/cleanup-everything.js >> $LOGFILE
+
+echo $LOGFILE
+cat $LOGFILE

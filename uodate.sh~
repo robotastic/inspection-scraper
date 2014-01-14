@@ -1,0 +1,6 @@
+#!/bin/sh
+
+NOW=$(date +"%b-%d-%y")
+LOGFILE="/home/luke/scrape/log/log-$NOW.log"
+NODE=/home/luke/local/node/bin/node
+echo "$NODE scrape.js > $LOGFILE"
